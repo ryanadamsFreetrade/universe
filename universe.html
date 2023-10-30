@@ -10,8 +10,8 @@
 
 <style>
      .card {
-        width: 300px;
-        height: 179px;
+        width: 273px;
+        height: 165px;
         border: 1px solid #ffb9cd;
         margin: 10px;
         padding: 16px;
@@ -61,7 +61,7 @@
 
 
     .card-img {
-        width: 5.5rem;
+        width: 5rem;
         border: solid 1px lightgrey;
         border-radius: 14px;
         font-family: 'Modern Era', sans-serif;
@@ -106,14 +106,14 @@
     }
 
     .card-Title {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         color: 340335;
         margin-right: 5px;
     }
 
     .card-Price {
         font-family: 'Modern Era';
-        font-size: 1rem;
+        font-size: 0.85rem;
         margin: 0px;
         padding: 0px;
         color: grey;
@@ -188,7 +188,7 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive columns with a minimum width of 300px */
     grid-gap: 10px; /* Add a consistent gap of 10px between rows and columns */
     justify-content: center; /* Center align the grid */
-    max-width: 1000px; /* Set a maximum width to limit the number of columns on large screens */
+    max-width: 59rem; /* Set a maximum width to limit the number of columns on large screens */
     width: 100%;
     overflow: scroll;
     padding-bottom: 30px;
@@ -502,6 +502,12 @@ filterSelects.forEach(select => {
         document.getElementById('filter-buttons').style.display = 'flex';
     }
 
+    if (currentData.length < 9) {
+        document.getElementById('filter-buttons').style.display = 'none';
+    } else {
+        document.getElementById('filter-buttons').style.display = 'flex';
+    }
+
     for (let i = 0; i < currentData.length; i++) {
         const item = currentData[i];
         const card = document.createElement('div');
@@ -516,10 +522,10 @@ filterSelects.forEach(select => {
                 <div>
                     <div><p style="color: grey; font-size: 0.9rem; font-family: modern era;margin: 0px; padding: 0px; margin-bottom: 3px;">Available on:</p></div>
                     <div style="display: flex;">
-                        <img class="pill-image basicPill" style="height: 25px; margin-right: 5px;" src="https://uploads-ssl.webflow.com/62547917cb5599e815e4d83b/653e6dc5a20cd20e8f22260d_lock.png">
+                        <img class="pill-image basicPill" style="height: 22px; margin-right: 5px;" src="https://uploads-ssl.webflow.com/62547917cb5599e815e4d83b/653e6dc5a20cd20e8f22260d_lock.png">
                         <div style="display: flex;">
-                            <img class="pill-image standardPill" style="height: 25px; margin-right: 5px;" src="https://uploads-ssl.webflow.com/62547917cb5599e815e4d83b/653bb19d5c9e049e3226757c_lock.png">
-                            <img class="pill-image plusPill" style="height: 25px;" src="https://uploads-ssl.webflow.com/62547917cb5599e815e4d83b/653bb18e21fd1a5f49e0b39e_lock.png">
+                            <img class="pill-image standardPill" style="height: 22px; margin-right: 5px;" src="https://uploads-ssl.webflow.com/62547917cb5599e815e4d83b/653bb19d5c9e049e3226757c_lock.png">
+                            <img class="pill-image plusPill" style="height: 22px;" src="https://uploads-ssl.webflow.com/62547917cb5599e815e4d83b/653bb18e21fd1a5f49e0b39e_lock.png">
                         </div>
                     </div>
                 </div>
