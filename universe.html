@@ -499,6 +499,7 @@ filterSelects.forEach(select => {
         document.getElementById('filter-buttons').style.display = 'none';
     } else {
         document.getElementById('no-results').style.display = 'none';
+        document.getElementById('filter-buttons').style.display = 'flex';
     }
 
     for (let i = 0; i < currentData.length; i++) {
