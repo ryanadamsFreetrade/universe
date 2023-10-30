@@ -11,7 +11,7 @@
 <style>
      .card {
         width: 273px;
-        height: 165px;
+        height: 150px;
         border: 1px solid #ffb9cd;
         margin: 10px;
         padding: 16px;
@@ -61,7 +61,7 @@
 
 
     .card-img {
-        width: 5rem;
+        width: 4.5rem;
         border: solid 1px lightgrey;
         border-radius: 14px;
         font-family: 'Modern Era', sans-serif;
@@ -112,6 +112,10 @@
         font-size: 1.1rem;
         color: 340335;
         margin-right: 5px;
+        white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden;    /* Hide overflow */
+    text-overflow: ellipsis; /* Display "..." for overflow */
+    max-width: 17ch; /* Limit to 10 characters (adjust as needed) */
     }
 
     .card-Price {
@@ -523,7 +527,17 @@ filterSelects.forEach(select => {
             <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
                 <div>
                     <h3 style="color: 340335;" class="card-Title">${item["Short Title"]}</h3>
-                    <p class="card-Price">${item.Subtitle}</p>
+                    <div style="display: flex;">
+                        <p class="card-Price">
+  ${item['Currency'] === 'USD' ? "$" :
+    item['Currency'] === 'EUR' ? "€" :
+    item['Currency'] === 'GBX' ? "£" :
+    item['Currency'] === 'GBP' ? "£" : ""}${item.Symbol} • ${item.Subtitle}</p>
+
+
+                       
+
+                    </div>
                 </div>
                 <div style="height: 3rem;"></div>
                 <div>
