@@ -355,7 +355,7 @@
  
 
     </div>
-    <div style="display: flex; gap: 20px; margin-top: 20px;">
+    <div id="filter-buttons" style="display: flex; gap: 20px; margin-top: 20px;">
     <button class= "nav-button prev" id="prev-page-button" onclick="prevPage()">Previous Page</button>
     <button class="nav-button next" id="next-page-button" onclick="nextPage()">Next Page</button>
     </div>
@@ -496,6 +496,7 @@ filterSelects.forEach(select => {
 
     if (currentData.length === 0) {
         document.getElementById('no-results').style.display = 'block'; 
+        document.getElementById('filter-buttons').style.display = 'none';
     } else {
         document.getElementById('no-results').style.display = 'none';
     }
