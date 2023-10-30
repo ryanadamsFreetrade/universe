@@ -61,14 +61,14 @@
 
 
     .card-img {
-        width: 5rem;
+        width: 5.5rem;
         border: solid 1px lightgrey;
         border-radius: 14px;
         font-family: 'Modern Era', sans-serif;
         margin-left: 10px;
         position: absolute;
-        top: -15px;
-        right: -15px;
+        top: -12px;
+        right: -12px;
         border: solid 1px #ffb9cd;
         background-color: white;
   
@@ -108,6 +108,7 @@
     .card-Title {
         font-size: 1.2rem;
         color: 340335;
+        margin-right: 5px;
     }
 
     .card-Price {
@@ -235,19 +236,22 @@
     }
 
     .reset-filters-button {
+        margin: 0px;
         padding: 10px;
-        padding-right: 20px;
-        padding-left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border-radius: 100px;
         color: #f7618b;
         border: solid 1px #f7618b !important;
-        background-color: #ffeff3;
+        background-color: #f7f7f7;
         /* Remove the default dropdown arrow */
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
         border: none;
         cursor: pointer;
+    
     }
 
     .reset-filters-button:hover {
@@ -343,7 +347,7 @@
             </select>
         </div>
 
-        <button class="reset-filters-button" id="reset-filters-button" onclick="resetFilters()">Reset Filters</button>
+        <button class="reset-filters-button" id="reset-filters-button" onclick="resetFilters()"> <img style="width: 1rem; padding: 0px !important; margin: 0px;" src="https://uploads-ssl.webflow.com/62e7a65c22ad58ebc16babb0/654010565420a3364e269687_Group%20165.svg"> </button>
     </div>
     <div style="width: 100%; display: flex; align-items: center; justify-content: center;">
 
