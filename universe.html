@@ -467,36 +467,37 @@ filterSelects.forEach(select => {
     });
 });
 
-    function filterCards() {
-        const searchValue = searchInput.value.toLowerCase().trim();
-        const selectedMarket = marketFilter.value;
-        const selectedType = typeFilter.value;
-        const selectedPlan = freetradePlanFilter.value;
-        const selectedSector = sectorFilter.value;
+function filterCards() {
+    const searchValue = searchInput.value.toLowerCase().trim();
+    const selectedMarket = marketFilter.value;
+    const selectedType = typeFilter.value;
+    const selectedPlan = freetradePlanFilter.value;
+    const selectedSector = sectorFilter.value;
 
-        const currentlyFilteredData = filteredData.filter(item =>
-            item["Short Title"].toLowerCase().includes(searchValue) && 
-            (selectedMarket === "" || item.Exchange === selectedMarket) && 
-            (selectedType === "" || item["Asset Class"] === selectedType) && 
-            (selectedSector === "" || item["Primary Sector"] === selectedSector) && 
-            
-            (
-                selectedPlan === "" ||
-                (selectedPlan === "Basic" && item["Only for Plus"] === "FALSE") ||
-                (selectedPlan === "Standard & Plus" && item["Only for Plus"] === "TRUE") ||
-                item['Freetrade Plan'] === selectedPlan
-            ) 
+    const currentlyFilteredData = filteredData.filter(item =>
+        (item["Short Title"].toLowerCase().includes(searchValue) ||
+         item["Symbol"].toLowerCase().includes(searchValue)) && 
+        (selectedMarket === "" || item.Exchange === selectedMarket) && 
+        (selectedType === "" || item["Asset Class"] === selectedType) && 
+        (selectedSector === "" || item["Primary Sector"] === selectedSector) && 
+        (
+            selectedPlan === "" ||
+            (selectedPlan === "Basic" && item["Only for Plus"] === "FALSE") ||
+            (selectedPlan === "Standard & Plus" && item["Only for Plus"] === "TRUE") ||
+            item['Freetrade Plan'] === selectedPlan
+        ) 
+    );
 
-        );
-  
     filters.searchValue = searchValue;
     filters.selectedMarket = selectedMarket;
     filters.selectedType = selectedType;
     filters.selectedPlan = selectedPlan;
     filters.selectedSector = selectedSector;
 
-        renderFilteredCards(currentlyFilteredData);
-    }
+    renderFilteredCards(currentlyFilteredData);
+}
+
+
 
     function renderFilteredCards(filteredData) {
     const startIdx = (currentPage - 1) * itemsPerPage;
