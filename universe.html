@@ -11,19 +11,15 @@
 <style>
      .card {
         width: 300px;
-        height: 179px;
-        border: 1px solid #ccc;
-        margin: 10px;
-        padding: 16px;
-        float: left;
-        box-sizing: border-box;
-        border-radius: 20px;
-        display: flex;
-        justify-content: space-between;
-        box-shadow: rgba(147, 75, 255, 0.15) 0px 25px 20px -20px;
-        background-color: white;
-        position: relative;
-        margin-top: 20px;
+    height: 179px;
+    margin: 10px;
+    padding: 16px;
+    padding-right: 10px;
+    border: solid 1px #ffd0dd;
+    box-sizing: border-box;
+    border-radius: 12px; 
+    position: relative;
+    margin-top: 20px;
     }
 
     /* Clear the float after every third card to start a new row */
@@ -66,7 +62,9 @@
         position: absolute;
         top: -15px;
         right: -15px;
-        box-shadow: rgba(160, 90, 203, 0.25) 0px 50px 50px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+       
+        margin-right: 5px;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
   
     }
 
@@ -103,6 +101,7 @@
 
     .card-Title {
         font-size: 1.2rem;
+        color: #340335;
     }
 
     .card-Price {
@@ -128,7 +127,7 @@
     padding-right: 20px;
     padding-left: 20px;
     border-radius: 100px;
-    color: #f7618b;
+    color: #340335;
     background-color: #f7f7f7;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -164,6 +163,7 @@
 /* Apply the soft outer glow when a filter is active */
 .filter.active-filter {
     box-shadow: 0 0 10px 0 #f7618b;
+    color: #f7618b;
 }
 
 .filter:hover {
@@ -182,6 +182,9 @@
     max-width: 1000px; /* Set a maximum width to limit the number of columns on large screens */
     width: 100%;
     overflow: scroll;
+    padding: 10px;
+    padding-bottom: 30px;
+    
 }
 
 @media (max-width: 980px) {
@@ -230,9 +233,9 @@
         padding-right: 20px;
         padding-left: 20px;
         border-radius: 100px;
-        color: #f7618b;
+        color: #340335;
         border: solid 1px #f7618b !important;
-        background-color: #f7f7f7;
+        background-color: #ffdfe8;
         /* Remove the default dropdown arrow */
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -242,7 +245,7 @@
     }
 
     .reset-filters-button:hover {
-        background-color: #e7e7e7;
+        background-color: #ffcbda;
     }
 
     #search-bar:focus,
@@ -514,17 +517,17 @@ filterSelects.forEach(select => {
                 <div class="account-type">
                 
           <div style="display: flex; width: 100%; justify-content: space-between;align-items: center;" class="GIA-container">
-                   <p class="account-name GIA red-text">GIA</p>
+                   <p style="color: #340335;" class="account-name GIA red-text">GIA</p>
                     <img class="tick" src="https://uploads-ssl.webflow.com/62547917cb5599e815e4d83b/653fe4eb55c7f64a73dbeff2_Radio%20Button.png">
          </div>
 
          <div style="display: flex; width: 100%; justify-content: space-between;align-items: center;" class="ISA-container">
-                   <p class="account-name ISA red-text">ISA</p>
+                   <p style="color: #340335;" class="account-name ISA red-text">ISA</p>
                    <img id="tickOption" class="tick" src="${item['ISA Eligible'] === 'TRUE' ? 'https://uploads-ssl.webflow.com/62547917cb5599e815e4d83b/653fe4eb55c7f64a73dbeff2_Radio%20Button.png' : 'https://uploads-ssl.webflow.com/62547917cb5599e815e4d83b/653fe8a85a010581a5dcccf7_Radio%20Button.png'}">
          </div>
 
          <div style="display: flex; width: 100%; justify-content: space-between;align-items: center;" class="SIPP-container">
-                   <p class="account-name SIPP red-text">SIPP</p>
+                   <p style="color: #340335;" class="account-name SIPP">SIPP</p>
                    <img id="tickOption" class="tick" src="${item['SIPP Eligible'] === 'TRUE' ? 'https://uploads-ssl.webflow.com/62547917cb5599e815e4d83b/653fe4eb55c7f64a73dbeff2_Radio%20Button.png' : 'https://uploads-ssl.webflow.com/62547917cb5599e815e4d83b/653fe8a85a010581a5dcccf7_Radio%20Button.png'}">
          </div>
 
