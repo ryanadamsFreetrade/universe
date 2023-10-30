@@ -161,7 +161,12 @@
     border: none;
     cursor: pointer;
     border: 1px solid #f7617b;
-  
+}
+
+.nav-button:hover {
+   
+    background-color: #de436f;
+   
 }
 
 .prev {
@@ -303,7 +308,6 @@
                 <option value="">All Markets</option>
                 <option value="XLON">XLON</option>
                 <option value="XNAS">XNAS</option>
-                <option value="XNYS">XNYS</option>
                 <option value="XNYS">XNYS</option>
                 <option value="PINK">PINK</option>
                 <option value="XHEL">XHEL</option>
@@ -633,8 +637,10 @@ function prevPage() {
     }
     if (currentPage <= 1) {
         document.getElementById("prev-page-button").style.opacity = "0.5";
+
     } else {
         document.getElementById("prev-page-button").style.opacity = "1";
+
     }
 }
     let currentPage = 1;
